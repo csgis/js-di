@@ -1,12 +1,12 @@
 {
-	"name": "@victorzinho/template-js-lib",
+	"name": "@csgis/di",
 	"version": "0.0.1-alpha.1",
-	"repository": "git@github.com:victorzinho/template-js-lib",
+	"repository": "git@github.com:csgis/di",
 	"author": "Víctor González <victor.gonzalez@geomati.co>",
 	"main": "src/main.js",
-	"dependencies": {
-	},
+	"dependencies": {},
 	"devDependencies": {
+		"babel-cli": "^6.26.0",
 		"babel-core": "^6.26.0",
 		"babel-eslint": "^7.2.1",
 		"babel-loader": "^7.1.2",
