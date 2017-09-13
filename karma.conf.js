@@ -10,10 +10,7 @@ const webpackConfig = {
   module: {
     loaders: [{
       test: /\.js$/,
-      loader: 'babel-loader',
-      options: {
-        presets: ['env']
-      }
+      loader: 'babel-loader'
     }, {
       test: /\.js$/,
       exclude: /node_modules|\-test\.js$/,
@@ -27,38 +24,26 @@ const webpackConfig = {
   }
 };
 
-const coverageConfig = {
-  dir: 'coverage',
-  reporters: [{
-    type: 'html',
-    subdir: 'html'
-  }, {
-    type: 'lcov',
-    subdir: 'lcov'
-  }]
-};
-
 module.exports = function c(config) {
   config.set({
     basePath: '.',
-    frameworks: ['jasmine'],
+    frameworks: ['mocha'],
     files: ['test/*.js'],
     preprocessors: {
       'src/*.js': ['webpack', 'sourcemap'],
       'test/*.js': ['webpack', 'sourcemap']
     },
-    reporters: ['progress', 'coverage'],
+    reporters: ['progress'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: false,
-    browsers: ['PhantomJS'],
+    browsers: ['ChromeHeadless'],
     singleRun: true,
     concurrency: Infinity,
     webpack: webpackConfig,
     webpackMiddleware: {
       noInfo: true
-    },
-    coverageReporter: coverageConfig
+    }
   });
 };

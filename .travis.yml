@@ -1,6 +1,16 @@
 language: node_js
 node_js:
   - "node"
-
+sudo: false
+addons:
+  chrome: stable
+cache:
+  yarn: true
+  directories:
+    - node_modules
+install:
+  - yarn
+script:
+  - yarn test
 after_success:
-  - "yarn run coveralls"
+  - "yarn run coverage"
