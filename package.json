@@ -25,8 +25,8 @@
 		"webpack": "^3.5.6"
 	},
 	"scripts": {
-		"test": "yarn run test:server && yarn run test:browser",
-		"test:server": "nyc mocha --compilers js:babel-register",
+		"test": "nyc mocha --compilers js:babel-register",
+		"test:all": "yarn run test && yarn run test:browser",
 		"test:browser": "karma start",
 		"test:debug": "karma start --single-run=false --auto-watch --browsers=Chrome --reporters=progress",
 		"lint": "eslint src test",
