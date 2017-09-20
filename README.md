@@ -163,7 +163,7 @@ obj.mymap.addLayer({
 });
 ```
 
-Removing all bindings:
+### Removing all bindings
 
 ```js
 di.reset();
