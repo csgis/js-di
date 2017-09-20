@@ -6,11 +6,7 @@ const isClass = o => typeof o === 'function' && typeof o.constructor === 'functi
 
 function inject(obj) {
   const c = obj.$inject ? obj.$inject.constructor : null;
-  if (c === Array) {
-    obj.$inject.forEach(function (i) {
-      obj[i] = get(i);
-    });
-  } else if (c === Object) {
+  if (c === Object) {
     for (var key in obj.$inject) { // eslint-disable-line guard-for-in
       var dep = get(obj.$inject[key]);
       if (!dep) {

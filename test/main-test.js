@@ -97,15 +97,6 @@ describe('di',  function () {
     }
   });
 
-  it('injects object with $inject array', function () {
-    di.bind('v', 42);
-    var obj = {
-      $inject: ['v']
-    };
-    di.inject(obj);
-    assert.equal(42, obj.v);
-  });
-
   it('injects object with $inject object', function () {
     di.bind('v', 42);
     var obj = {
