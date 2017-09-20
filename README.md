@@ -3,9 +3,14 @@
 [![Build Status](https://travis-ci.org/csgis/js-di.svg?branch=master)](https://travis-ci.org/csgis/js-di)
 [![codecov](https://codecov.io/gh/csgis/js-di/branch/master/graph/badge.svg)](https://codecov.io/gh/csgis/js-di)
 
-A simple and lightweight JavaScript library for Dependency Injection/Inversion of Control (DI/IoC).
+A simple and lightweight JavaScript library for Dependency Injection/Inversion of Control (DI/IoC) with no dependencies.
+
+Suitable for Node and browsers.
+
+Written strictly in ES2015; Webpack/Babel/... should be managed by consumers.
 
 There are other libraries that are more powerful but also are more complex and with bigger goals (such as [InversifyJS](http://inversify.io/)). We focus on simplicity and cleanest API possible.
+
 
 ## Getting started
 
@@ -34,6 +39,7 @@ class Map {
 
 class OLMap extends Map {
   addLayer(opts) {
+    console.log('OLMap adding layer...');
     // ...
   }
 }
@@ -44,6 +50,14 @@ var map = di.get(Map);
 map.addLayer({
   // ...
 });
+```
+
+You might need to bundle it properly for running, for example, in Node:
+
+```bash
+yarn add -D webpack
+node_modules/.bin/webpack --target node index.js bundle.js
+node bundle.js
 ```
 
 ## Examples
