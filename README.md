@@ -195,5 +195,4 @@ Generic error for injecting problems. Extends `Error`. Can be imported by:
 
 ```js
 import { DIError } from '@csgis/di';
-
 ```
