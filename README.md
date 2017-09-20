@@ -131,7 +131,7 @@ class OLMap extends Map {
 di.bind(Renderer, new WebGLRenderer());
 di.bind(Map, OLMap);
 di
-.get(Map) // here the new OLMap instance has the renderer member injected with a the WebGLRenderer instance.
+.get(Map) // here the new OLMap instance has the renderer member injected with the WebGLRenderer instance.
 .addLayer({
   // ...
 }); // this calls render in injected WebGLRenderer as part of the addLayer method in OLMap.
