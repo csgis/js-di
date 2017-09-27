@@ -1,0 +1,6 @@
+yarn-error.log
+node_modules
+coverage
+.nyc_output
+coverage.lcov
+
