@@ -1,11 +1,12 @@
 {
 	"name": "@csgis/di",
-	"version": "0.0.1-alpha.2",
+	"version": "0.0.1-alpha.3",
 	"license": "MIT",
 	"repository": "git@github.com:csgis/di",
 	"author": "Víctor González <victor.gonzalez@geomati.co>",
-	"main": "src/main.js",
+	"main": "dist/main.js",
 	"devDependencies": {
+		"babel-cli": "^6.26.0",
 		"babel-core": "^6.26.0",
 		"babel-eslint": "^7.2.1",
 		"babel-loader": "^7.1.2",
@@ -25,6 +26,8 @@
 		"webpack": "^3.5.6"
 	},
 	"scripts": {
+		"build": "babel src --out-dir dist",
+		"prepublish": "yarn run build",
 		"test": "nyc mocha --compilers js:babel-register",
 		"test:all": "yarn run test && yarn run test:browser",
 		"test:browser": "karma start",
